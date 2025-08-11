@@ -37,4 +37,4 @@ Drivers in the following occupations had more than 50% acceptance percentages
 - Acceptance of bar coupons decreased as income levels increased
 
 # Reccomendations 
-
+- Offer Bar coupons based on frequency of bar visits, gender , marital status and couupation
