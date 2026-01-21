@@ -40,6 +40,12 @@ We take several models and train them with a part of the dataset. We try to find
 
 # Findings 
 
+## Observations
+
+Marital Status - The campaign was more successful for married customers 
+Education - Respodents with an university degree had the highest subscription acceptance 
+Job - Admins, Blue collar workers and technicians were the most likely to book deposits.
+
 ## Baseline Model
 
 Using the training and test data a baseline was created using a DummyClassifier with a Most Frequent Strategy 
@@ -88,7 +94,7 @@ Using a GridSearchCV the hyperparameters were tuned for the following models
 | Model  	                 | Training Accuracy       | Testing Accuracy  | Hyperparameters |
 |----------------------------|-------------------------|-------------------|-----------------|
 |Logistic Regression         | 0.887557		           |   0.886502	       | {'C': 0.01, 'penalty': 'l2', 'solver': 'lbfgs'}        |
-|KNN                         | 0.889772                |   0.883103	       | {'n_neighbors': 9, 'p': 1, 'weights': 'uniform'}        |
+|KNN                         | 0.889772                 |   0.883103	       | {'n_neighbors': 9, 'p': 1, 'weights': 'uniform'}        |
 |Decision Tree               | 0.887557		           |   0.886502	       | {'max_depth': 3, 'min_samples_leaf': 1,'min_samples_split': 2}      |
 |SVM                         | 0.892868		           |   0.88956	       | {'C': 1, 'gamma': 'scale', 'kernel': 'rbf'}      |
 
@@ -101,3 +107,8 @@ to train the SVM model.
 
 
 # Reccomendations 
+
+> [!IMPORTANT]
+> Post tuning SVM with gamma scale and rbf kernel provides the best training and testing accuracy.
+
+The model can be used by banks to understand customer profile in terms of education, marital status to target in campaigns for securing new deposits. For example the campaigns could be targeted towards respodents with a univeristy degree or blue collar workers. 
