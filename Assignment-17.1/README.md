@@ -42,6 +42,11 @@ We take several models and train them with a part of the dataset. We try to find
 
 ## Observations
 
+<img alt="alt_text" width="512px" src="images/subscription_by_education.png" />
+<img alt="alt_text" width="512px" src="images/subscription_by_job.png" />
+<img alt="alt_text" width="512px" src="images/subscription_by_marital_status.png" />
+
+
 Marital Status - The campaign was more successful for married customers 
 Education - Respodents with an university degree had the highest subscription acceptance 
 Job - Admins, Blue collar workers and technicians were the most likely to book deposits.
