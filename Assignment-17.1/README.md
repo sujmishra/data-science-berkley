@@ -62,11 +62,9 @@ The Baseline model had the following characteristics
 |Model Recall Score          | 0.6235 |
 |Model F1 Score              | 0.2595 |
 
----
-**NOTE**
 
-Running the LogisticRegression with default parameters showed the same accuracy as the baseline model. This shows a high degree of imbalance. The above numbers were obtained using a balanced class weight.
----
+> [!NOTE]
+> Running the LogisticRegression with default parameters showed the same accuracy as the baseline model. This shows a high degree of imbalance. The above numbers were obtained using a balanced class weight.
 
 ## Model Comparision
 | Model  	                 | Training Time (Seconds) | Training Accuracy | Testing Accuracy|
@@ -94,14 +92,12 @@ Using a GridSearchCV the hyperparameters were tuned for the following models
 |Decision Tree               | 0.887557		           |   0.886502	       | {'max_depth': 3, 'min_samples_leaf': 1,'min_samples_split': 2}      |
 |SVM                         | 0.892868		           |   0.88956	       | {'C': 1, 'gamma': 'scale', 'kernel': 'rbf'}      |
 
----
-**NOTE**
-Running GridSearchCV on the SVM made the execution run for a very long time. So the shorter form of the dataset was used 
+> [!NOTE]
+> Running GridSearchCV on the SVM made the execution run for a very long time. So the shorter form of the dataset was used 
 to train the SVM model.
----
 
-
-* Tuning hyperparameters showed improvement in training and testing accuracy for all models.
+> [!IMPORTANT]
+> Tuning hyperparameters showed improvement in training and testing accuracy for all models.
 
 
 # Reccomendations 
