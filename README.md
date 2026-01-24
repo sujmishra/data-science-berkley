@@ -4,4 +4,5 @@ This Repository Contains solutions implemented as part of coursework for the Pra
 
 1. Practial Application-1 : Will the customer accept the coupon?
 2. Practial Application-17 : Comparing Classifiers
+3. Assignment 20: Exploratory Data Analysis for Capstone
 
