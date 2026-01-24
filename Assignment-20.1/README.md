@@ -14,8 +14,8 @@
 
 
 ## Research Question
-** Which lifestyle factors such as diet exercise etc can be used to predict the 
-risk of diabetes? **
+**Which lifestyle factors such as diet exercise etc can be used to predict the 
+risk of diabetes?**
 
 
 # Business Objective 
