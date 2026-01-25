@@ -272,7 +272,7 @@ Choice Of Model: We will create our baseline with a **Logistic Regression** mode
 > false positives are unacceptable.**
 
 > [!NOTE]
-> **Recall is also very low 0.152 again due to imblanced class problem. In the field of healthcare, correctly identifying psotive cases is way more important than actual accuracy.**
+> **Recall is also very low at 15.2% ,again due to imblanced class problem. In the field of healthcare, correctly identifying positive cases is way more important than actual accuracy.**
 
 > [!NOTE]
 > **F1 score is also very low at 0.238. This shows that the baseline model performs poorly in 
