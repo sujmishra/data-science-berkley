@@ -248,7 +248,7 @@ we will create a column transformation pipeline with the following steps
 
 ## Baseline Model
 
-Choice Of Model: We will create our baseline with a Logistic Regression model for simplicity and easy interpretation
+Choice Of Model: We will create our baseline with a **Logistic Regression** model for simplicity and easy interpretation
 
 ## Model scores 
 
