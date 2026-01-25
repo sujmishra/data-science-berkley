@@ -263,24 +263,24 @@ Choice Of Model: We will create our baseline with a Logistic Regression model fo
 # Inference 
 
 > [!NOTE]
-> As seen from the distribution Pie chart, the total occurence of diabetes is only 15.3% of the overall
-> dataset. The baseline model achieves an accuracy of 85.1% . Since the data is highly imbalanced accuracy cannot be used as a metric.
+> **As seen from the distribution Pie chart, the total occurence of diabetes is only 15.3% of the overall
+> dataset. The baseline model achieves an accuracy of 85.1% . Since the data is highly imbalanced accuracy cannot be used as a metric.**
 
 > [!NOTE]
-> As seen from the distribution Pie chart, the total occurence of diabetes is only 15.3% of the overall
+> **As seen from the distribution Pie chart, the total occurence of diabetes is only 15.3% of the overall
 > dataset. Since the model is precise about half of the time, it shows low precision. In healthcare settings 
-> false positives are unacceptable.
+> false positives are unacceptable.**
 
 > [!NOTE]
-> Recall is also very low 0.152 again due to imblanced class problem. In the field of healthcare, correctly identifying psotive cases is way more important than actual accuracy.
+> **Recall is also very low 0.152 again due to imblanced class problem. In the field of healthcare, correctly identifying psotive cases is way more important than actual accuracy.**
 
 > [!NOTE]
-> F1 score is also very low at 0.238. This shows that the baseline model performs poorly in 
-> balancing false positive and false negatives. 
+> **F1 score is also very low at 0.238. This shows that the baseline model performs poorly in 
+> balancing false positive and false negatives.** 
 
 > [!NOTE]
-> ROC-AUC is at 0.811. This shows that the baseline model performs reasonably well in 
-> ranking diabetics higher than non diabetics and has high discriminative ability.
+> **ROC-AUC is at 0.811. This shows that the baseline model performs reasonably well in 
+> ranking diabetics higher than non diabetics and has high discriminative ability.**
 
 # Next Steps 
 
