@@ -104,19 +104,19 @@ A box plot of the numeric features was created to show the co-relation between t
 
 The plot shows the following 
 
-1. correlation of Body Mass Index(BMI) to diabetes 
+1. Correlation of Body Mass Index(BMI) to diabetes 
    - Respodents with "Pre Diabetes" or "Diabetes" have a high BMI
    - As median BMI increases, the risk of falling into "Pre Diabetes" or "Diabetes" increases
 > [!NOTE]
 > High BMI has a strong correlation with the risk of diabetes.
 
-2. correlation of mental health to diabetes 
+2. Correlation of mental health to diabetes 
    - Respodents with median days with mental health conditions is close to negligible(almost 0) for all categories
    - Some outliers exist with many people reporting a lot of days when mental health conditions persisted.
 > [!NOTE]
 > Mental health does not seem to impact different diabetic categories differently.
 
-2. correlation of physical health to diabetes 
+2. Correlation of physical health to diabetes 
    - Respodents with median days of physical health conditions increases in the "Diabetes" category
    - Some outliers exist.
 > [!NOTE]
@@ -164,7 +164,7 @@ A bar plot of correlation scores of the Clinical Categorical Binary features sho
 
 <img alt="alt_text" width="512px" src="images/clinical_correlation.png" />
 
- **correlation of Clinical Features with risk of diabetes**
+ **Correlation of Clinical Features with risk of diabetes**
 
 | Feature  	   | correlation Score |correlation Indicator|    Note       |
 |--------------|-----------------------|---------------|---------------|
@@ -190,7 +190,7 @@ A bar plot of correlation scores of the Lifestyle Categorical Binary features sh
 
 <img alt="alt_text" width="512px" src="images/lifestyle_correlation.png" />
 
-**correlation of Lifestyle Features with risk of diabetes**
+**Correlation of Lifestyle Features with risk of diabetes**
 
 | Feature  	   | correlation Score |correlation Indicator|    Note       |
 |--------------|-----------------------|---------------|---------------|
