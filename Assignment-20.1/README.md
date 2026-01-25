@@ -154,7 +154,7 @@ A pair wise grid plot of the numeric features is shown here
 
 A stacked bar chart of the Clinical Categorical Binary features showed the following 
 
-<img alt="alt_text" width="512px" src="images/clinical_countplot.png" />
+<img alt="alt_text" width="512px" src="images/clinical_stackplot.png" />
 
 A count plot of the Clinical Categorical Binary features showed the following 
 
@@ -180,7 +180,7 @@ A bar plot of correlation scores of the Clinical Categorical Binary features sho
 
 A stacked bar chart of the Lifestyle Categorical Binary features showed the following 
 
-<img alt="alt_text" width="512px" src="images/lifestyle_countplot.png" />
+<img alt="alt_text" width="512px" src="images/lifestyle_stackplot.png" />
 
 A count plot of the Lifestyle Categorical Binary features showed the following 
 
