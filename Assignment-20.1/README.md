@@ -143,8 +143,8 @@ A bar plot of corelation scores of the Clinical Categorical Binary features show
 | HighChol     |0.20 |Strong Indicator      |Diabetes is more prevalent when high cholestrol is diagnosed. (HighChol=1)|
 | CholCheck    |0.075| Weak Indicator |ALmost everyone had done a cholestrol check in the past 5 years|
 | Stroke       |0.10 |Moderate  Indicator   |Low percentage of respodents had a stroke, but within those who had diabetics was a significant number|
-| HeartDiseaseorAttack |0.17|Moderate Indicator| | More respodents with diabetes have heart diesease.|
-| DiffWalk |0.21 |Strong Indicator| | Respodents who face dificulty walking are more likely to have diabetes.|
+| HeartDiseaseorAttack |0.17|Moderate Indicator| More respodents with diabetes have heart diesease.|
+| DiffWalk |0.21 |Strong Indicator| Respodents who face dificulty walking are more likely to have diabetes.|
 | Sex |0.03  |Weak Indicator | Counts are balanced betwen the two genders|
 
 #### Binary Categorical Lifestyle Features 
@@ -160,6 +160,14 @@ A count plot of the Lifestyle Categorical Binary features showed the following
 A bar plot of corelation scores of the Lifestyle Categorical Binary features showed the following
 
 <img alt="alt_text" width="512px" src="images/lifestyle_corelation.png" />
+
+| Feature  	   | Corelation Score |Corelation Indicator|    Note       |
+|--------------|-----------------------|---------------|---------------|
+| Smoker       |0.047 |Weak Indicator      |Smokers have a slightly higher chance of diabetes|
+| PhysActivity     |-0.103  |Strong Indicator      |People doing physical activity have lower risk of diabetes|
+| NoDocbcCost    |-0.067 | Moderate Indicator |This is a socio economic lifestyle indicator|
+| Veggies       |-0.043  |Weak  Indicator   |Daily Veggie consumption slightly reduces risk of diabetes|
+| Veggies       |-0.025  |Weak  Indicator   |Daily fruit consumption slightly reduces risk of diabetes|
 
 # Modeling 
 
