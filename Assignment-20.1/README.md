@@ -135,13 +135,13 @@ A bar plot of corelation scores of the Clinical Categorical Binary features show
 
 <img alt="alt_text" width="512px" src="images/clinical_corelation.png" />
 
- 
+ **Corelation of Clinical Features with risk of diabetes**
 
 | Feature  	   | Corelation Score |Corelation Indicator|    Note       |
 |--------------|-----------------------|---------------|---------------|
 | HighBP       |0.26 |Strong Indicator      |Diabetes is more prevalent when high blood pressure is diagnosed. (HighBP=1)|
 | HighChol     |0.20 |Strong Indicator      |Diabetes is more prevalent when high cholestrol is diagnosed. (HighChol=1)|
-| CholCheck    |0.075| Weak Indicator |ALmost everyone had done a cholestrol check in the past 5 years|
+| CholCheck    |0.075| Weak Indicator |Almost everyone had done a cholestrol check in the past 5 years|
 | Stroke       |0.10 |Moderate  Indicator   |Low percentage of respodents had a stroke, but within those who had diabetics was a significant number|
 | HeartDiseaseorAttack |0.17|Moderate Indicator| More respodents with diabetes have heart diesease.|
 | DiffWalk |0.21 |Strong Indicator| Respodents who face dificulty walking are more likely to have diabetes.|
@@ -160,6 +160,8 @@ A count plot of the Lifestyle Categorical Binary features showed the following
 A bar plot of corelation scores of the Lifestyle Categorical Binary features showed the following
 
 <img alt="alt_text" width="512px" src="images/lifestyle_corelation.png" />
+
+**Corelation of Lifestyle Features with risk of diabetes**
 
 | Feature  	   | Corelation Score |Corelation Indicator|    Note       |
 |--------------|-----------------------|---------------|---------------|
