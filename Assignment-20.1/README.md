@@ -26,7 +26,7 @@ As per https://www.cdc.gov/diabetes/php/data-research/index.html 40.1 million pe
 
 # Understanding the Data
 
-The dataset contains 253680 rows and  22 columns. The dataset contains 21 feature columns and 1 target column.
+The dataset contains **253680** rows and  **22** columns. The dataset contains 21 feature columns and 1 target column.
 
 ## Feature columns 
 
@@ -76,7 +76,7 @@ The dataset contains no missing or null values (NAN, None or NAT) values
 ### Duplicate Rows
 The dataset contains **23899** duplicate rows 
 
-After clean-up of the duplicate rows, we are left with 229781 rows.
+After clean-up of the duplicate rows, we are left with **229781** rows.
 
 ### Categorical data validation
 All categorical columns contain data with right cardinality as defined.
@@ -258,15 +258,9 @@ Choice Of Model: We will create our baseline with a Logistic Regression model fo
 | Precision                  |  0.544             | When a model predicts that a respodent has diabetes its right 54.4% of the time| 
 | Recall                     |  0.152             | Of all diabetic respodents only 15.2% are identified by the model|
 | F1                         |  0.238             | Low recall with moderate precision|
-| ROC-AUC                    |  0.811             | Probability that a randomly chosen diabetic respodent is ranked higher in predicted probablity than a randomly chosen non diabetic.
-
-
-
-
+| ROC-AUC                    |  0.811             | Probability that a randomly chosen diabetic respodent is ranked higher in predicted probablity than a randomly chosen non diabetic.|
 
 # Inference 
-
-> [!IMPORTANT]
 
 > [!NOTE]
 > As seen from the distribution Pie chart, the total occurence of diabetes is only 15.3% of the overall
