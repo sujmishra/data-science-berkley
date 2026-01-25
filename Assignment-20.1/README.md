@@ -132,9 +132,9 @@ A pair wise grid plot of the numeric features is shown here
 
 <img alt="alt_text" width="512px" src="images/numeric_hexbin.png" />
 
-1. BMI vs Mental Health: Most data concentrated at MentHlth =0 across all BMIs. Higher BMI seems slighlty more associated with mental health issues.
-2. BMI vs Physical Health: Positive correlation is visible. Higher BMI seems to associate with greater physical health issues.
-3. Mental Health vs Physical Health: A stronger grid pattern is observed here. Positive correlation is observed signalling this respodents with poor physical health also have poor mental health. 
+1. **BMI vs Mental Health**: Most data concentrated at MentHlth =0 across all BMIs. Higher BMI seems slighlty more associated with mental health issues.
+2. **BMI vs Physical Health**: Positive correlation is visible. Higher BMI seems to associate with greater physical health issues.
+3. **Mental Health vs Physical Health**: A stronger grid pattern is observed here. Positive correlation is observed signalling this respodents with poor physical health also have poor mental health. 
 
 ##### IQR Analysis
 | Feature  	                    | IQR                |    Outlier Percentage|
@@ -215,13 +215,13 @@ A combined line plot of the Lifestyle Categorical Ordinal features showed the fo
 
 <img alt="alt_text" width="512px" src="images/lifestyle_countplot.png" />
 
-1. Education: There is an inverse relationship between the prevalnce of diabetes and education. As education levels increase, diabetes level decreases.This is probably due to the fact that education has a protective effect through increased awareness of the bad effects of diabetes on general health.
+1. **Education**: There is an inverse relationship between the prevalnce of diabetes and education. As education levels increase, diabetes level decreases.This is probably due to the fact that education has a protective effect through increased awareness of the bad effects of diabetes on general health.
 
-2. Income: Income also has an inverse relationship with prevalnce of diabetes. As income levels incease, socio economic factors and lifestyle contribute towards a lower prevalence.
+2. **Income**: Income also has an inverse relationship with prevalnce of diabetes. As income levels incease, socio economic factors and lifestyle contribute towards a lower prevalence.
 
-3. Age: Prevalence of diabetes peaks in middle to late age group. This data matches with general occurence of type 2 diabetes in middle age or older age groups.
+3. **Age**: Prevalence of diabetes peaks in middle to late age group. This data matches with general occurence of type 2 diabetes in middle age or older age groups.
 
-4. GenHealth: The health score goes from 1 being excellent and 5 being poor. The line plot clearly shows that as the health score increases, the prevalence of diabetes also increases from 3% to almost 38%
+4. **GenHealth**: The health score goes from 1 being excellent and 5 being poor. The line plot clearly shows that as the health score increases, the prevalence of diabetes also increases from 3% to almost 38%
 
 
 # Modeling 
@@ -240,7 +240,7 @@ We have also identified that
 
 we will create a column transformation pipeline with the following steps 
 
-1. RobustScaler for the numerical features.
+1. **RobustScaler** for the numerical features.
 2. Pass through on the categorical features. (binary and ordinal)
 
 > [!NOTE]
