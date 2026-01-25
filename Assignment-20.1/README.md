@@ -216,7 +216,7 @@ The ordinal features have the following characteristics
 
 A combined line plot of the Lifestyle Categorical Ordinal features showed the following 
 
-<img alt="alt_text" width="512px" src="images/lifestyle_countplot.png" />
+<img alt="alt_text" width="512px" src="images/categorical_lineplot.png" />
 
 1. **Education**: There is an inverse relationship between the prevalnce of diabetes and education. As education levels increase, diabetes level decreases.This is probably due to the fact that education has a protective effect through increased awareness of the bad effects of diabetes on general health.
 
