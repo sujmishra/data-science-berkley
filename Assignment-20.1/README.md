@@ -97,6 +97,7 @@ A pie plot of the target column shows the following distribution
 <img alt="alt_text" width="512px" src="images/diabetes_distribution.png" />
 
 Histograms of all features can be shown in the following image 
+
 <img alt="alt_text" width="512px" src="images/histograms.png" />
 
 #### Numeric Features
