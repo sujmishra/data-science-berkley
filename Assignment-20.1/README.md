@@ -1,5 +1,5 @@
 # Methodology 
- We will use CRISP-DM or cross Industry Standard Process for Data Mining as the method of data analysis.
+ We will use CRISP-DM or Cross Industry Standard Process For Data Mining as the method of data analysis.
 
  <img alt="alt_text" width="512px" src="images/CRISP-DM_Process_Diagram.png" />
 
