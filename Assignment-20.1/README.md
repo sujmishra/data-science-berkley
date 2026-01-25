@@ -241,7 +241,14 @@ We will combine all the features for the initial analysis with the baseline mode
 We have also identified that
 
 1. All binary features have 0 or 1 as the values 
-2. All ordinal features are valid in range 
+2. All ordinal features are valid in range
+
+## Baseline Target selection
+For simplicity we have modified the target column from a multiclass problem to a binary one, The target column considered 
+is **'Diabetes Prevalence'** which has only 2 possible values
+
+1. 0 - No Diabetes
+2. 1 - Diabetes
 
 ### Column Transformer
 
