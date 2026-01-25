@@ -71,7 +71,7 @@ The target column is 'Diabetes_012' which contains values representing the follo
 The dataset contains no missing or null values (NAN, None or NAT) values
 
 > [!NOTE]
-> Since no missing values are found, imputing with median or mean for numeric features is not required. Similarly no handling is required for the categorical features.
+> **Since no missing values are found, imputing with median or mean for numeric features is not required. Similarly no handling is required for the categorical features.**
 
 ### Duplicate Rows
 The dataset contains **23899** duplicate rows 
@@ -108,19 +108,19 @@ The plot shows the following
    - Respodents with "Pre Diabetes" or "Diabetes" have a high BMI
    - As median BMI increases, the risk of falling into "Pre Diabetes" or "Diabetes" increases
 > [!NOTE]
-> High BMI has a strong correlation with the risk of diabetes.
+> **High BMI has a strong correlation with the risk of diabetes.**
 
 2. Correlation of mental health to diabetes 
    - Respodents with median days with mental health conditions is close to negligible(almost 0) for all categories
    - Some outliers exist with many people reporting a lot of days when mental health conditions persisted.
 > [!NOTE]
-> Mental health does not seem to impact different diabetic categories differently.
+> **Mental health does not seem to impact different diabetic categories differently.**
 
 2. Correlation of physical health to diabetes 
    - Respodents with median days of physical health conditions increases in the "Diabetes" category
    - Some outliers exist.
 > [!NOTE]
-> Poor physical health shows a weak correlation with the risk of diabetes.
+> **Poor physical health shows a weak correlation with the risk of diabetes.**
 
 A Violin plot of the numeric features was created to show correlation between the features and the target.
 
@@ -144,10 +144,10 @@ A pair wise grid plot of the numeric features is shown here
 | PhysHlth		              | 4.0                   |  14.9%              |
 
 > [!NOTE]
-> IQR analysis and visual analysis of the box plots show that almost 15% of the respodents experienced 
+> **IQR analysis and visual analysis of the box plots show that almost 15% of the respodents experienced 
 > worse mental or physical health conditions than the rest of the respodents. However outliers identified here
 > should not be removed as they would remove the people identified with chronic conditions, depression and 
-> very high BMI and skew the data towards healthy people. 
+> very high BMI and skew the data towards healthy people.**
 
 
 #### Binary Categorical Clinical Features 
