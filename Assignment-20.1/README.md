@@ -254,7 +254,10 @@ we will create a column transformation pipeline with the following steps
 Choice Of Model: We will create our baseline with a **Logistic Regression** model for simplicity and easy interpretation
 
 ## Cross Validation
-Train test split or cross validation is used for reproducibility.
+1. Train test split or cross validation is used for reproducibility.
+2. 20% of the dataset is used for the testing split.
+3. Stratification is used as a cross validation strategy due to the imbalanced nature of the dataset.
+
 ## Model scores 
 
 | Metric  	                 | Score              | Intepretation |
