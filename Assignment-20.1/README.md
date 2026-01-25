@@ -143,7 +143,7 @@ A bar plot of corelation scores of the Clinical Categorical Binary features show
 | HighChol     |0.20 |Strong Indicator      |Diabetes is more prevalent when high cholestrol is diagnosed. (HighChol=1)|
 | CholCheck    |0.075| Weak Indicator |Almost everyone had done a cholestrol check in the past 5 years|
 | Stroke       |0.10 |Moderate  Indicator   |Low percentage of respodents had a stroke, but within those who had diabetics was a significant number|
-| HeartDiseaseorAttack |0.17|Moderate Indicator| More respodents with diabetes have heart diesease.|
+| HeartDiseaseorAttack |0.17|Moderate Indicator| More respodents with diabetes have heart disease.|
 | DiffWalk |0.21 |Strong Indicator| Respodents who face dificulty walking are more likely to have diabetes.|
 | Sex |0.03  |Weak Indicator | Counts are balanced betwen the two genders|
 
