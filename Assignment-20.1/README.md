@@ -30,7 +30,7 @@ As per https://www.cdc.gov/diabetes/php/data-research/index.html 40.1 million pe
 
 ## Dataset
 
-The dataset used here is the [CDC Diabetes Health Indicators](https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators) dataset from UC Irvine Machine Learning Repository. The UC Irvine Machine Learning Repository points to the  [dataset home page] (https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset) from kaggle. The raw data comes from the Behavioral Risk Factor Surveilance System from CDC. We will use the CSV from kaggle to perform the exploratory data analysis
+The dataset used here is the [CDC Diabetes Health Indicators](https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators) dataset from UC Irvine Machine Learning Repository. The UC Irvine Machine Learning Repository points to the [Dataset Home Page](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset) from kaggle. The raw data comes from the Behavioral Risk Factor Surveilance System from CDC. We will use the CSV from kaggle to perform the exploratory data analysis
 
 The dataset contains **253680** rows and  **22** columns. The dataset contains 21 feature columns and 1 target column.
 
