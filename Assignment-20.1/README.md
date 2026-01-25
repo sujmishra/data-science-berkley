@@ -255,7 +255,9 @@ we will create a column transformation pipeline with the following steps
 
 ## Baseline Model
 
-Choice Of Model: We will create our baseline with a **Logistic Regression** model for simplicity and easy interpretation
+1. We will create our baseline with a **Logistic Regression** model for simplicity and easy interpretation
+2. Since this is a baseline model , no regularization (L1/L2) was used.
+
 
 ## Cross Validation
 1. Train test split or cross validation is used for reproducibility.
