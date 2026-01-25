@@ -24,6 +24,8 @@ This research can help address a significant public health problem. If it can be
 
 As per https://www.cdc.gov/diabetes/php/data-research/index.html 40.1 million people(12% of the population) are diabetic. Since a very large population of 115.2 million are pre-diabetic , targeted intervention can help contain this risk. This will could reduce the burden of this disease on Americans.
 
+**Public health officials, Researchers and general population could be the target audience of this analysis.**
+
 # Understanding the Data
 
 The dataset contains **253680** rows and  **22** columns. The dataset contains 21 feature columns and 1 target column.
@@ -32,27 +34,27 @@ The dataset contains **253680** rows and  **22** columns. The dataset contains 2
 
 | Name  	                    | Data Type            | Indicator Type| Description                                  |
 |----------------------------|----------------------|---------------|-----------------------------------------------|
-| HighBP                     | Categorical(Binary)  | Clinical |Does the respodent have high blood pressure?                 |
-| HighChol                   | Categorical(Binary)  | Clinical |Does the respodent have high cholestrol?                     |
-| CholCheck                  | Categorical(Binary)  | Clinical |Has the respodent done a cholestrol check in past 5 years?   |
+| HighBP                     | Categorical(Binary)  | Clinical |Does the respondent have high blood pressure?                 |
+| HighChol                   | Categorical(Binary)  | Clinical |Does the respondent have high cholestrol?                     |
+| CholCheck                  | Categorical(Binary)  | Clinical |Has the respondent done a cholestrol check in past 5 years?   |
 | BMI                        | Numeric (Float)      | Lifestyle| Body mass Index of the respodent                             |
-| Smoker                     | Categorical(Binary)  | Lifestyle|Has the respodent smoked atleast 100 cigs in his entire life?|
-| Stroke                     | Categorical(Binary)  | Clinical |Was the respodent ever told that he had a stroke?            |
-| HeartDiseaseorAttack       | Categorical(Binary)  | Clinical |Does the respodent have coronary heart disease?              |
-| PhysActivity               | Categorical(Binary)  | Lifestyle| Did the respodent do any physical activity in past 30 days?  |
-| Fruits                     | Categorical(Binary)  | Lifestyle|Does the respodent consume fruits one or more times daily?   |
-| Veggies                    | Categorical(Binary)  | Lifestyle|Does the respodent consume veggies one or more times daily?  |
-| HvyAlcoholConsump          | Categorical(Binary)  | Lifestyle|Is the respodent a heavy drinker(14 drinks/week for men and 7 drinks/week for women 0 is heavy and 1 is not heavy)                 |
-| AnyHealthcare              | Categorical(Binary)  | Lifestyle|Does the respodent have healthcare coverage?                 |
-| NoDocbcCost                | Categorical(Binary)  | Lifestyle|Did the respodent not visit a doctor in the past 12 months due to cost?      |
-| GenHlth                    | Categorical(Ordinal) | Lifestyle|Respodent rating on a scale of 1-5 on general health         |
-| MentHlth                   | Numeric              | Lifestyle|Number of days during past 30 days when respodent encountered stress, depression or any other mental health challenges.              |
-| PhysHlth                   | Numeric              | Lifestyle|Number of days during past 30 days when respodent encountered injuries or other physical health challenges.              |
-| DiffWalk                   | Categorical(Binary)  | Clinical|Does the respodent have difficulty walking or climbing stairs?               |
-| Sex                        | Categorical(Binary)  | Clinical|Gender of the respodent (Male or Female)                 |
-| Age                        | Categorical(Ordinal) | Clinical|Age level of the respodent based on a 13-level age category(_AGEG5YR)  1 = 18-24 9 = 60-64 13 = 80 or older                 |
-| Education                  | Categorical(Ordinal) | Lifestyle|Education level (EDUCA) of the respodent           |
-| Income                     | Categorical(Ordinal) | Lifestyle|Income level (INCOME2 )  of the respodent              |
+| Smoker                     | Categorical(Binary)  | Lifestyle|Has the respondent smoked atleast 100 cigs in his entire life?|
+| Stroke                     | Categorical(Binary)  | Clinical |Was the respondent ever told that he had a stroke?            |
+| HeartDiseaseorAttack       | Categorical(Binary)  | Clinical |Does the respondent have coronary heart disease?              |
+| PhysActivity               | Categorical(Binary)  | Lifestyle| Did the respondent do any physical activity in past 30 days?  |
+| Fruits                     | Categorical(Binary)  | Lifestyle|Does the respondent consume fruits one or more times daily?   |
+| Veggies                    | Categorical(Binary)  | Lifestyle|Does the respondent consume veggies one or more times daily?  |
+| HvyAlcoholConsump          | Categorical(Binary)  | Lifestyle|Is the respondent a heavy drinker(14 drinks/week for men and 7 drinks/week for women 0 is heavy and 1 is not heavy)                 |
+| AnyHealthcare              | Categorical(Binary)  | Lifestyle|Does the respondent have healthcare coverage?                 |
+| NoDocbcCost                | Categorical(Binary)  | Lifestyle|Did the respondent not visit a doctor in the past 12 months due to cost?      |
+| GenHlth                    | Categorical(Ordinal) | Lifestyle|respondent rating on a scale of 1-5 on general health         |
+| MentHlth                   | Numeric              | Lifestyle|Count of number of days during past 30 days when respondent encountered stress, depression or any other mental health challenges.              |
+| PhysHlth                   | Numeric              | Lifestyle|Count of number of days during past 30 days when respondent encountered injuries or other physical health challenges.              |
+| DiffWalk                   | Categorical(Binary)  | Clinical|Does the respondent have difficulty walking or climbing stairs?               |
+| Sex                        | Categorical(Binary)  | Clinical|Gender of the respondent (Male or Female)                 |
+| Age                        | Categorical(Ordinal) | Clinical|Age level of the respondent based on a 13-level age category(_AGEG5YR)  1 = 18-24 9 = 60-64 13 = 80 or older                 |
+| Education                  | Categorical(Ordinal) | Lifestyle|Education level (EDUCA) of the respondent           |
+| Income                     | Categorical(Ordinal) | Lifestyle|Income level (INCOME2 )  of the respondent              |
 
 
 
@@ -173,7 +175,7 @@ A bar plot of correlation scores of the Clinical Categorical Binary features sho
 | CholCheck    |0.072| Weak Indicator |Almost everyone had done a cholestrol check in the past 5 years|
 | Stroke       |0.099 |Moderate  Indicator   |Low percentage of respodents had a stroke, but within those who had diabetics was a significant number|
 | HeartDiseaseorAttack |0.168|Moderate Indicator| More respodents with diabetes have heart disease.|
-| DiffWalk |0.206 |Strong Indicator| Respodents who face dificulty walking are more likely to have diabetes.|
+| DiffWalk |0.206 |Strong Indicator| Respodents who face difficulty walking are more likely to have diabetes.|
 | Sex |0.033  |Weak Indicator | Counts are balanced betwen the two genders|
 
 #### Binary Categorical Lifestyle Features 
@@ -250,6 +252,8 @@ we will create a column transformation pipeline with the following steps
 
 Choice Of Model: We will create our baseline with a **Logistic Regression** model for simplicity and easy interpretation
 
+## Cross Validation
+Train test split or cross validation is used for reproducibility.
 ## Model scores 
 
 | Metric  	                 | Score              | Intepretation |
