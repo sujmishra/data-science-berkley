@@ -266,7 +266,7 @@ we will create a column transformation pipeline with the following steps
 2. Since this is a baseline model , no regularization (L1/L2) was used.
 
 
-## Cross Validation
+## Train/Test Split
 1. Train test split or cross validation is used for reproducibility.
 2. 20% of the dataset is used for the testing split.
 3. Stratification is used as a cross validation strategy due to the imbalanced nature of the dataset.
