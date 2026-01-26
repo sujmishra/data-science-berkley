@@ -22,6 +22,9 @@ This can help dealers make informed buying decisions and also determine the pric
 
 **Target audience: Sales and acquisition teams in used car dealerships**
 
+# Notebook
+The jupyter notebook used for this machine learning exercise is present [here](prompt_II.ipynb) 
+
 # Understanding the Data
 
 ## Dataset
