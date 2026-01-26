@@ -17,6 +17,8 @@
 **Which lifestyle factors such as diet exercise etc can be used to predict the 
 risk of diabetes?**
 
+# Notebook
+The jupyter notebook used for this machine learning exercise is present [here](capstone-eda.ipynb) 
 
 # Understanding the Business
 
