@@ -159,7 +159,7 @@ A pair wise grid plot of the numeric features is shown here
 ### Categorical Features
 A count plot of the categorical features was created to show the co-relation between the features and the target.
 
-<img alt="alt_text" width="512px" src="images/categorical_countplots.png" />
+<img alt="alt_text" width="512px" src="images/categorical_countplot.png" />
 
 The plot shows the following
 
