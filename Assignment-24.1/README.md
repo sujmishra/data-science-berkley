@@ -283,7 +283,7 @@ we will create a column transformation pipeline with the following steps
 | F1                         |  0.238             | Low recall with moderate precision|
 | ROC-AUC                    |  0.811             | Probability that a randomly chosen diabetic respodent is ranked higher in predicted probablity than a randomly chosen non diabetic.|
 
-# Inference 
+## Baseline Model Inference 
 
 > [!NOTE]
 > **As seen from the distribution Pie chart, the total occurence of diabetes is only 15.3% of the overall
@@ -308,10 +308,9 @@ we will create a column transformation pipeline with the following steps
 
 ## Feature Engineering
 
-## Interaction Features
+### Interaction Features
 
-During exploratory data anyslsis we have seen that some of the Categorical Binary Feature of type Clinical Indicator showed a high degree of correlation with the prevalence of diabetes. Within these features we can look at a subset of features to see , how these features impact diabetes prevalence individually and cumulatively. 
-
+During exploratory data analysis we have seen that some of the Categorical Binary Feature of type Clinical Indicator showed a high degree of correlation with the prevalence of diabetes. Within these features we can look at a subset of features to see , how these features impact diabetes prevalence individually and cumulatively. 
 
 
 1. Clinical Markers 
@@ -328,7 +327,7 @@ Below is the plot showing Diabetes Prevalence by cumulative clinical markers
 > **As can be seen from the above cumulative plot, the presence of comorbidity indicates severe dysfunction and higher risk of diabetes. We will create a cumulative column for clinical markers.**
 
 
-2. Lifestye Markers 
+2. Lifestyle Markers 
    The correlation plot of lifestyle features has already indicated positive or negative correlation with 
    the prevalence of diabetes. We will similarly create a cumulative column for lifestyle markers.
     
@@ -346,7 +345,7 @@ Below is the plot showing Diabetes Prevalence by cumulative clinical markers
 | BMI Sedentary Marker Risk  |    Sedentary lifestyle and high BMI increase risk.             |  
 
 
-## Model Comparision
+## Model Comparison
 
 We will use the following classifiers with balanced weights and compare their scores.
 
@@ -360,7 +359,7 @@ We will use the following classifiers with balanced weights and compare their sc
 
 
 
-## Model Comparison Results (Sorted by Recall)
+### Model Comparison Results (Sorted by Recall)
 
 | Model                | Accuracy | Precision | Recall   | F1-Score | ROC-AUC  | Training Time (s) |
 |----------------------|----------|-----------|----------|----------|----------|-------------------|
@@ -371,12 +370,17 @@ We will use the following classifiers with balanced weights and compare their sc
 | Gradient Boosting    | 0.854    | 0.562     | 0.158    | 0.246    | 0.815    | 11.29             |
 | Random Forest        | 0.843    | 0.441     | 0.152    | 0.226    | 0.772    | 55.45             |
 
-The following plot show a graphical representation of the training time by model type
-<img alt="alt_text" width="512px" src="images/model_training_time.png" />
 
+### Model Comparison Visualization
+**The below plot show a graphical representation of the training time by model type.**
+<br> 
+<img alt="alt_text" src="images/model_training_time.png" width="512px"/>
 
-The following plot show a graphical representation of the performance metrics by model type
+**The below plot show a graphical representation of the performance metrics by model type**
+<br>
 <img alt="alt_text" width="512px" src="images/model_metrics.png" />
+
+
 
 
 > [!NOTE]
@@ -486,7 +490,8 @@ On comparing the results of each of the classifiers we observe the following
 | 15   | Age                      | 0.0016     | Clinical (Ordinal)  | Age category |
 
 
-The following plot shows the feature importance as determined by the DecisionTreeClassifier. 
+**The following plot shows the feature importance as determined by the DecisionTreeClassifier.**
+<br>
 <img alt="alt_text" width="512px" src="images/feature_importance_dt.png" />
 
 
@@ -527,6 +532,10 @@ The following plot shows the feature importance as determined by the DecisionTre
 **Loss Over Training**
 1. Training loss decreases from 93% to 86% showing optimization.
 
+**The image below shows how the simple neural network performs**
+<br>
+<img alt="alt_text" width="512px" src="images/diabetes_nn_training.png" />
+
 
 ### Advanced Architecture
 
@@ -564,7 +573,8 @@ The following plot shows the feature importance as determined by the DecisionTre
 1. Training loss decreases flat at 93% showing no optimization.
 2. L2 penalty didn't help convergence
 
-The image below shows how the neural network performs
+**The image below shows how the advanced neural network performs**
+<br>
 <img alt="alt_text" width="512px" src="images/diabetes_advanced_nn_training.png" />
 
 
