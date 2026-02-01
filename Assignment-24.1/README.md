@@ -503,7 +503,10 @@ The following plot shows the feature importance as determined by the DecisionTre
 | Output | Dense | 1 | Sigmoid | 33 | Binary classification output (diabetes probability) |
 
 
-#### Neural Network Performance Metrics
+
+
+
+### Neural Network Performance Metrics
 
 | Metric | Score | Interpretation |
 |--------|-------|----------------|
@@ -515,16 +518,13 @@ The following plot shows the feature importance as determined by the DecisionTre
 | Training Time | 0.91 min | Model trained in under 1 minute |
 
 
-The image below shows how the neural network performs
-<img alt="alt_text" width="512px" src="images/diabetes_nn_training.png" />
-
-#### Recall Over Training 
+**Recall Over Training** 
 
 1. Training recall starts at 80% and increases to 82%, showing that the model is learning.
 2. Validation recall fluctuates (0.71–0.80).
 
 
-#### Loss Over Training
+**Loss Over Training**
 1. Training loss decreases from 93% to 86% showing optimization.
 
 
@@ -541,7 +541,7 @@ The image below shows how the neural network performs
 | Hidden 5 | Dense | 16 | ReLU | None | 528 | Bottleneck layer before output |
 | Output | Dense | 1 | Sigmoid | None | 17 | Binary diabetes probability [0,1] |
 
-#### Neural Network Performance Metrics
+### Neural Network Performance Metrics
 
 | Metric | Score | Interpretation |
 |--------|-------|----------------|
@@ -553,14 +553,14 @@ The image below shows how the neural network performs
 | Training Time | 1.55 min | Model trained in ~90 seconds |
 
 
-#### Recall Over Training 
+**Recall Over Training**
 
 1. Training recall completely flat at ~81% for all 100 epochs.
 2. Validation recall fluctuates between 75-86% (±6%).
 3. Zero Learning After Initialization
 
 
-#### Loss Over Training
+**Loss Over Training**
 1. Training loss decreases flat at 93% showing no optimization.
 2. L2 penalty didn't help convergence
 
