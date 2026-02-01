@@ -374,7 +374,7 @@ The following plot show a graphical representation of the performance metrics by
 <img alt="alt_text" width="512px" src="images/model_metrics.png" />
 
 
-The following plot shows a plot of the training times of the models. 
+The following plot shows the training times of the models. 
 <img alt="alt_text" width="512px" src="images/model_training_time.png" />
 
 > [!NOTE]
@@ -392,3 +392,97 @@ On comparing the results of each of the classifiers we observe the following
 | Naive Bayes         | Fast and balanced      |  Moderate recall       | Not Reccomended  |  Unacceptable miss rate for medical screening despite speed advantage      |
 | Gradient Boosting   | High precision, high accuracy, good ROC-AUC |  Very low recall       |  Not Reccomended        | Optimized for majority class and not useful for healthcare       |
 | Random Forest       |  High precision                        |  Very low recall and slow        | Not Reccomended        |  Unacceptable miss rate for medical screening and slow.      |
+
+## Model Tuning
+
+> [!NOTE]
+> **We will tune Decision tree, Logistic Regression and Naive Bayes with a Grid Search CV. We will not tune SVM as it will be extremly slow. We will also not tune Gradient Boosting and Random Forest as they have un-usable recall values.**
+
+
+## Decision Tree Hyperparameter Grid
+
+### Hyperparameter Grid for Decision Tree
+
+| Parameter              | Values Tested                                    |
+|------------------------|--------------------------------------------------|
+| max_depth              | 8, 10, 12, 15, None                              |
+| min_samples_split      | 10, 20, 30, 50                                   |
+| min_samples_leaf       | 5, 10, 15, 20                                    |
+| class_weight           | balanced, {0: 1, 1: 8}, {0: 1, 1: 10}            |
+| criterion              | gini, entropy                                    |
+
+### Hyperparameter Grid for Logistic Regression 
+
+| Parameter              | Values Tested                                    |
+|------------------------|--------------------------------------------------|
+| C                      | 0.001, 0.01, 0.1, 1, 10, 100                     |
+| penalty                | l1, l2                                           |
+| solver                 | saga                                             |
+| class_weight           | balanced, {0: 1, 1: 8}, {0: 1, 1: 10}            |
+| max_iter               | 2000, 3000                                       |
+
+## Tuned Model Performance Comparison
+
+| Model                      | Accuracy | Precision | Recall   | F1-Score | ROC-AUC  | Training Time (s) |
+|----------------------------|----------|-----------|----------|----------|----------|-------------------|
+| Tuned Decision Tree        | 0.592    | 0.256     | **0.890**| 0.397    | 0.805    | 147.02            |
+| Tuned Logistic Regression  | 0.620    | 0.268     | **0.875**| 0.410    | 0.810    | 1442.01           |
+
+## Best Hyperparameters
+
+### Tuned Decision Tree
+| Parameter              | Best Value      |
+|------------------------|-----------------|
+| class_weight           | {0: 1, 1: 10}   |
+| criterion              | entropy         |
+| max_depth              | 8               |
+| min_samples_leaf       | 20              |
+| min_samples_split      | 50              |
+
+**Training Time**: 2.45 minutes
+
+### Tuned Logistic Regression
+| Parameter              | Best Value      |
+|------------------------|-----------------|
+| C                      | 1               |
+| class_weight           | {0: 1, 1: 10}   |
+| max_iter               | 5000            |
+| penalty                | l2              |
+| solver                 | liblinear       |
+
+**Training Time**: 24.03 minutes
+
+## Key Findings
+
+> [!NOTE]
+> **Both tuned models achieved excellent recall (87-89%)** - a significant improvement over baseline models (76% recall). This means they now identify nearly 9 out of 10 diabetic patients.
+
+> [!IMPORTANT]
+> **Trade-offs:**
+> - **Recall improved**: 76% → 89% (Decision Tree baseline → tuned)
+> - **Precision decreased**: 31% → 26% (more false positives)
+
+## Feature Importance - Tuned Decision Tree
+
+
+| Rank | Feature                  | Importance | Category            | Interpretation |
+|------|--------------------------|------------|---------------------|----------------|
+| 1    | ClinicalMarkerRisk       | 0.4067     | Engineered Feature  | Cumulative clinical risk score (comorbidities) |
+| 2    | GenHlth                  | 0.2382     | Lifestyle (Ordinal) | Self-reported general health (1=excellent, 5=poor) |
+| 3    | AgeBMIMarkerRisk         | 0.2353     | Engineered Feature  | Age × BMI interaction |
+| 4    | BMI                      | 0.0622     | Numeric             | Body Mass Index |
+| 5    | CholCheck                | 0.0102     | Clinical (Binary)   | Cholesterol check in past 5 years |
+| 6    | HvyAlcoholConsump        | 0.0081     | Lifestyle (Binary)  | Heavy alcohol consumption |
+| 7    | Sex                      | 0.0054     | Clinical (Binary)   | Gender |
+| 8    | MentHlth                 | 0.0054     | Lifestyle (Numeric) | Days of poor mental health (past 30 days) |
+| 9    | Income                   | 0.0048     | Lifestyle (Ordinal) | Income level |
+| 10   | HighBP                   | 0.0044     | Clinical (Binary)   | High blood pressure |
+| 11   | DiffWalk                 | 0.0040     | Clinical (Binary)   | Difficulty walking/climbing stairs |
+| 12   | PhysHlth                 | 0.0033     | Lifestyle (Numeric) | Days of poor physical health (past 30 days) |
+| 13   | Education                | 0.0031     | Lifestyle (Ordinal) | Education level |
+| 14   | HighChol                 | 0.0019     | Clinical (Binary)   | High cholesterol |
+| 15   | Age                      | 0.0016     | Clinical (Ordinal)  | Age category |
+
+
+The following plot shows the feature importance as determined by the DecisionTreeClassifier. 
+<img alt="alt_text" width="512px" src="images/feature_importance_dt.png" />
