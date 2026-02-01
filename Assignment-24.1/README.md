@@ -235,7 +235,6 @@ A combined line plot of the Lifestyle Categorical Ordinal features showed the fo
 
 # Modeling 
 
-
 ## Baseline Feature selection
 Since baseline models are meant to establish a benchmark, we will not drop any features.
 We will combine all the features for the initial analysis with the baseline model.
@@ -273,7 +272,7 @@ we will create a column transformation pipeline with the following steps
 2. 20% of the dataset is used for the testing split.
 3. Stratification is used as a cross validation strategy due to the imbalanced nature of the dataset.
 
-## Model scores 
+## Baseline Model scores 
 
 | Metric  	                 | Score              | Intepretation |
 |----------------------------|--------------------|----------------|
@@ -305,14 +304,91 @@ we will create a column transformation pipeline with the following steps
 > **ROC-AUC is at 0.811. This shows that the baseline model performs reasonably well in 
 > ranking diabetics higher than non diabetics and has high discriminative ability.**
 
-# Next Steps 
 
-1. Instead of using all features (as in the baseline), we should use interaction and cumulative features to 
-   increase recall and F1 
+## Feature Engineering
 
-2. Since the baseline model has a low recall , we should try the following models 
+## Interaction Features
 
-   - Tree based models eg: Decision Tree or Random Forest classifiers
-   - SVM with RBF Kernel 
-   - Ensemble models such as VotingClassifiers
+During exploratory data anyslsis we have seen that some of the Categorical Binary Feature of type Clinical Indicator showed a high degree of correlation with the prevalence of diabetes. Within these features we can look at a subset of features to see , how these features impact diabetes prevalence individually and cumulatively. 
 
+
+
+1. Clinical Markers 
+
+Below is the plot showing Diabetes Prevalence by individual clinical markers 
+
+<img alt="alt_text" width="512px" src="images/clinical_markers.png" />
+
+Below is the plot showing Diabetes Prevalence by cumulative clinical markers 
+
+<img alt="alt_text" width="512px" src="images/cumulative_clinical_markers.png" />
+
+> [!NOTE]
+> **As can be seen from the above cumulative plot, the presence of comorbidity indicates severe dysfunction and higher risk of diabetes. We will create a cumulative column for clinical markers. **
+
+
+2. Lifestye Markers 
+   The correlation plot of lifestyle features has already indicated positive or negative correlation with 
+   the prevalence of diabetes. We will similarly create a cumulative column for lifestyle markers.
+    
+
+3. Both Age and BMI showed high degree of corelation with diabetes prevalence and were strong indicators. With an increase in age, metabolism reduces and insulin resistance develops, so its important to capture this interaction.
+
+4. BMI showed a high degree of positive correlation and physical activity showed a high degree of negative corelation. Its important to capture this interaction.
+
+
+| Interactive Feature  	     | Intepretation                              |
+|----------------------------|--------------------------------------------|
+| Clinical Marker Risk       |  Comorbidity increases risk.               |       
+| Lifestyle Marker Risk      |  Positive lifestyle traits decrease and negative ones increase risk.               |
+| Age BMI Marker Risk        |  Metabolism decreases with age amd high BMI has a compounded impact.               |
+| BMI Sedentary Marker Risk  |    Sedentary lifestyle and high BMI increase risk.             |  
+
+
+## Model Comparision
+
+We will use the following classifiers with balanced weights and compare their scores.
+
+
+# 1. Logistic regression with L2 regularization
+# 2. DecisionTreeClassifier
+# 3. RandomForestClassifier
+# 4. GradientBoostingClassifier 
+# 5. SVM 
+# 6. Gaussian Naive Bayes 
+
+
+## Model Comparison Results (Sorted by Recall)
+
+| Model                | Accuracy | Precision | Recall   | F1-Score | ROC-AUC  | Training Time (s) |
+|----------------------|----------|-----------|----------|----------|----------|-------------------|
+| Decision Tree        | 0.708    | 0.309     | **0.761**| 0.440    | 0.797    | 0.38              |
+| Logistic Regression  | 0.726    | 0.324     | **0.752**| 0.453    | 0.810    | 12.27             |
+| SVM (5% sample)      | 0.646    | 0.263     | **0.745**| 0.388    | 0.756    | 23.19             |
+| Naive Bayes          | 0.755    | 0.331     | **0.612**| 0.430    | 0.779    | 0.06              |
+| Gradient Boosting    | 0.854    | 0.562     | 0.158    | 0.246    | 0.815    | 11.29             |
+| Random Forest        | 0.843    | 0.441     | 0.152    | 0.226    | 0.772    | 55.45             |
+
+The following plot show a graphical representation of the performance metrics by model type
+
+<img alt="alt_text" width="512px" src="iimages/model_metrics.png" />
+
+
+The following plot shows a plot of the training times of the models. 
+<img alt="alt_text" width="512px" src="images/clinical_markers.png" />
+
+> [!NOTE]
+> **SVM is trained on 5% of the total dataset and hence the training time is not a true representation.**
+
+
+On comparing the results of each of the classifiers we observe the following 
+
+
+| Model               | Strength                 | Weakness | Verdict | Reason |
+|---------------------|--------------------------|----------|---------|--------|
+| Decision Tree       | High Recall, Fast        | Precision is Low |   Reccomended      | High Recall is important in healthcare usecase.       |
+| Logistic Regression | High recall, decent AUC  |  Precision is Low | Alternative        |  Simple model     |
+| SVM (5% sample)     | High recall              |  Low accuracy and slow        |     Not Reccomended    | Impractical training time with no performance benefit over simpler models       |
+| Naive Bayes         | Fast and balanced      |  Moderate recall       | Not Reccomended  |  Unacceptable miss rate for medical screening despite speed advantage      |
+| Gradient Boosting   | High precision, high accuracy, good ROC-AUC |  Very low recall       |  Not Reccomended        | Optimized for majority class and not useful for healthcare       |
+| Random Forest       |  High precision                        |  Very low recall and slow        | Not Reccomended        |  Unacceptable miss rate for medical screening and slow.      |
