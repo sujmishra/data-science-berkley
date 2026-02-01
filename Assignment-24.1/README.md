@@ -375,7 +375,7 @@ The following plot show a graphical representation of the performance metrics by
 
 
 The following plot shows a plot of the training times of the models. 
-<img alt="alt_text" width="512px" src="images/clinical_markers.png" />
+<img alt="alt_text" width="512px" src="images/model_training_time.png" />
 
 > [!NOTE]
 > **SVM is trained on 5% of the total dataset and hence the training time is not a true representation.**
