@@ -325,7 +325,7 @@ Below is the plot showing Diabetes Prevalence by cumulative clinical markers
 <img alt="alt_text" width="512px" src="images/cumulative_clinical_markers.png" />
 
 > [!NOTE]
-> **As can be seen from the above cumulative plot, the presence of comorbidity indicates severe dysfunction and higher risk of diabetes. We will create a cumulative column for clinical markers. **
+> **As can be seen from the above cumulative plot, the presence of comorbidity indicates severe dysfunction and higher risk of diabetes. We will create a cumulative column for clinical markers.**
 
 
 2. Lifestye Markers 
