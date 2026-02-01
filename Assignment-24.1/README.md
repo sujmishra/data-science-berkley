@@ -565,7 +565,7 @@ The image below shows how the neural network performs
 2. L2 penalty didn't help convergence
 
 The image below shows how the neural network performs
-<img alt="alt_text" width="512px" src="diabetes_advanced_nn_training.png" />
+<img alt="alt_text" width="512px" src="images/diabetes_advanced_nn_training.png" />
 
 
 
