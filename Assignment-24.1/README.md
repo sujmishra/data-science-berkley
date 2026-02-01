@@ -17,7 +17,7 @@
 **Which lifestyle factors such as diet exercise etc can be used to predict the 
 risk of diabetes?**
 
-# Notebook
+## Notebook
 1. The jupyter notebook used for this exploratory data analysis is present [here](capstone-eda.ipynb) 
 2. The jupyter notebook used for model training and tuning is [here](diabetes_models.ipynb) 
 
@@ -91,7 +91,7 @@ After clean-up of the duplicate rows, we are left with **229781** rows.
 All categorical columns contain data with right cardinality as defined.
 
 
-### Data Visualization
+## Data Visualization
 
 A pie plot of the target column shows the following distribution
 
@@ -107,7 +107,7 @@ Histograms of all features can be shown in the following image
 
 <img alt="alt_text" width="512px" src="images/histograms.png" />
 
-#### Numeric Features
+### Numeric Features
 A box plot of the numeric features was created to show the co-relation between the features and the target.
 
 <img alt="alt_text" width="512px" src="images/numeric_boxplots.png" />
@@ -146,287 +146,247 @@ A pair wise grid plot of the numeric features is shown here
 2. **BMI vs Physical Health**: Positive correlation is visible. Higher BMI seems to associate with greater physical health issues.
 3. **Mental Health vs Physical Health**: A stronger grid pattern is observed here. Positive correlation is observed signalling this respodents with poor physical health also have poor mental health. 
 
-##### IQR Analysis
+#### IQR Analysis
 | Feature  	                    | IQR                |    Outlier Percentage|
 |----------------------------|-----------------------|---------------------|
-| BMI		                    | 8.0                   |  2%                 |
-| MentHlth		              | 2.0                   |  15.7%              |
-| PhysHlth		              | 4.0                   |  14.9%              |
+| BMI                        | 6.0                   | 15.3%               |
+| Mental Health              | 0.0                   | 17.0%               |
+| Physical Health            | 0.0                   | 17.7%               |
 
 > [!NOTE]
-> **IQR analysis and visual analysis of the box plots show that almost 15% of the respodents experienced 
-> worse mental or physical health conditions than the rest of the respodents. However outliers identified here
-> should not be removed as they would remove the people identified with chronic conditions, depression and 
-> very high BMI and skew the data towards healthy people.**
+> **Outliers in BMI, MentHlth and PhysHlth are retained as they represent valid extreme values in health data. These outliers are clinically meaningful (e.g., very high BMI, frequent poor health days) and should not be removed.**
 
+### Categorical Features
+A count plot of the categorical features was created to show the co-relation between the features and the target.
 
-#### Binary Categorical Clinical Features 
+<img alt="alt_text" width="512px" src="images/categorical_countplots.png" />
 
-A stacked bar chart of the Clinical Categorical Binary features showed the following 
+The plot shows the following
 
-<img alt="alt_text" width="512px" src="images/clinical_stackplot.png" />
-
-A count plot of the Clinical Categorical Binary features showed the following 
-
-<img alt="alt_text" width="512px" src="images/clinical_countplot.png" />
-
-A bar plot of correlation scores of the Clinical Categorical Binary features showed the following
-
-<img alt="alt_text" width="512px" src="images/clinical_correlation.png" />
-
- **Correlation of Clinical Features with risk of diabetes**
-
-| Feature  	   | correlation Score |correlation Indicator|    Note       |
-|--------------|-----------------------|---------------|---------------|
-| HighBP       |0.254 |Strong Indicator      |Diabetes is more prevalent when high blood pressure is diagnosed. (HighBP=1)|
-| HighChol     |0.195 |Strong Indicator      |Diabetes is more prevalent when high cholestrol is diagnosed. (HighChol=1)|
-| CholCheck    |0.072| Weak Indicator |Almost everyone had done a cholestrol check in the past 5 years|
-| Stroke       |0.099 |Moderate  Indicator   |Low percentage of respodents had a stroke, but within those who had diabetics was a significant number|
-| HeartDiseaseorAttack |0.168|Moderate Indicator| More respodents with diabetes have heart disease.|
-| DiffWalk |0.206 |Strong Indicator| Respodents who face difficulty walking are more likely to have diabetes.|
-| Sex |0.033  |Weak Indicator | Counts are balanced betwen the two genders|
-
-#### Binary Categorical Lifestyle Features 
-
-A stacked bar chart of the Lifestyle Categorical Binary features showed the following 
-
-<img alt="alt_text" width="512px" src="images/lifestyle_stackplot.png" />
-
-A count plot of the Lifestyle Categorical Binary features showed the following 
-
-<img alt="alt_text" width="512px" src="images/lifestyle_countplot.png" />
-
-A bar plot of correlation scores of the Lifestyle Categorical Binary features showed the following
-
-<img alt="alt_text" width="512px" src="images/lifestyle_correlation.png" />
-
-**Correlation of Lifestyle Features with risk of diabetes**
-
-| Feature  	   | correlation Score |correlation Indicator|    Note       |
-|--------------|-----------------------|---------------|---------------|
-| Smoker       |0.046 |Weak Indicator      |Smokers have a slightly higher chance of diabetes|
-| PhysActivity     |-0.101  |Strong Indicator      |People doing physical activity have lower risk of diabetes|
-| HvyAlcoholConsump    |-0.066 | Moderate Indicator |Heavy consumption of alcohol increase risk of diabetes|
-| Veggies       |-0.042  |Weak  Indicator   |Daily Veggie consumption slightly reduces risk of diabetes|
-| Fruits       |-0.025  |Weak  Indicator   |Daily fruit consumption slightly reduces risk of diabetes|
-
-
-#### Categorical Ordinal Features 
-
-The ordinal features have the following characteristics 
-| Feature  	   | Cardinality|
-|--------------|------------|
-|Education     | 6 [Educa USA](https://www.mtusdata.org/mtus-action/variables/EDUCA#codes_section)|
-|Income        | 8 [INCOME2](https://www.icpsr.umich.edu/web/RCMD/studies/34085/datasets/0001/variables/INCOME2?archive=RCMD)          |
-|Age           | 13 [_AGEG5YR](https://www.cdc.gov/brfss/annual_data/2020/pdf/2020-calculated-variables-version4-508.pdf)         |
-|GenHealth     | 5          |
-
-A combined line plot of the Lifestyle Categorical Ordinal features showed the following 
-
-<img alt="alt_text" width="512px" src="images/categorical_lineplot.png" />
-
-1. **Education**: There is an inverse relationship between the prevalnce of diabetes and education. As education levels increase, diabetes level decreases.This is probably due to the fact that education has a protective effect through increased awareness of the bad effects of diabetes on general health.
-
-2. **Income**: Income also has an inverse relationship with prevalnce of diabetes. As income levels incease, socio economic factors and lifestyle contribute towards a lower prevalence.
-
-3. **Age**: Prevalence of diabetes peaks in middle to late age group. This data matches with general occurence of type 2 diabetes in middle age or older age groups.
-
-4. **GenHealth**: The health score goes from 1 being excellent and 5 being poor. The line plot clearly shows that as the health score increases, the prevalence of diabetes also increases from 3% to almost 38%
-
-
-# Modeling 
-
-## Baseline Feature selection
-Since baseline models are meant to establish a benchmark, we will not drop any features.
-We will combine all the features for the initial analysis with the baseline model.
-
-We have also identified that
-
-1. All binary features have 0 or 1 as the values 
-2. All ordinal features are valid in range
-
-## Baseline Target selection
-For simplicity we have modified the target column from a multiclass problem to a binary one, The target column considered 
-is **'Diabetes Prevalence'** which has only 2 possible values
-
-1. 0 - No Diabetes
-2. 1 - Diabetes
-
-### Column Transformer
-
-we will create a column transformation pipeline with the following steps 
-
-1. **RobustScaler** for the numerical features.
-2. Pass through on the categorical features. (binary and ordinal)
+1. **High Blood Pressure (HighBP)** - People with high blood pressure have a significantly higher proportion of diabetes and pre-diabetes.
 
 > [!NOTE]
-> Since this is health data and we want to preserve the  outliers , we will apply a RobustScaler on the numerical features.
-
-## Baseline Model
-
-1. We will create our baseline with a **Logistic Regression** model for simplicity and easy interpretation
-2. Since this is a baseline model , no regularization (L1/L2) was used.
+> **High blood pressure shows a strong positive correlation with diabetes risk.**
 
 
-## Train/Test Split
-1. Train test split or cross validation is used for reproducibility.
-2. 20% of the dataset is used for the testing split.
-3. Stratification is used as a cross validation strategy due to the imbalanced nature of the dataset.
-
-## Baseline Model scores 
-
-| Metric  	                 | Score              | Intepretation |
-|----------------------------|--------------------|----------------|
-| Accuracy                   |  0.851             | 85.1% of the respodents were classified correctly by the model|
-| Precision                  |  0.544             | When a model predicts that a respodent has diabetes its right 54.4% of the time| 
-| Recall                     |  0.152             | Of all diabetic respodents only 15.2% are identified by the model|
-| F1                         |  0.238             | Low recall with moderate precision|
-| ROC-AUC                    |  0.811             | Probability that a randomly chosen diabetic respodent is ranked higher in predicted probablity than a randomly chosen non diabetic.|
-
-# Inference 
+2. **High Cholesterol (HighChol)** - Similar to HighBP, people with high cholesterol have higher diabetes prevalence.
 
 > [!NOTE]
-> **As seen from the distribution Pie chart, the total occurence of diabetes is only 15.3% of the overall
-> dataset. The baseline model achieves an accuracy of 85.1% . Since the data is highly imbalanced accuracy cannot be used as a metric.**
+> **High cholesterol shows a strong positive correlation with diabetes risk.**
+
+
+3. **Cholesterol Check (CholCheck)** - People who have had cholesterol checks show higher diabetes rates. This might indicate health-conscious behavior or existing health concerns.
+
+4. **Smoker** - Smoking status shows moderate correlation with diabetes. Smokers have slightly higher diabetes rates.
+
+5. **Stroke** - People who have had strokes show significantly higher diabetes prevalence. Strong association between cardiovascular events and diabetes.
+
+6. **Heart Disease or Attack** - Similar to stroke, strong correlation with diabetes.
+
+7. **Physical Activity (PhysActivity)** - People who do NOT engage in physical activity have higher diabetes rates.
 
 > [!NOTE]
-> **As seen from the distribution Pie chart, the total occurence of diabetes is only 15.3% of the overall
-> dataset. Since the model is precise about half of the time, it shows low precision. In healthcare settings 
-> false positives are unacceptable.**
+> **Physical inactivity shows strong correlation with increased diabetes risk.**
+
+
+8. **Fruits** - People who consume fruits daily have lower diabetes rates.
+
+9. **Veggies** - Similar to fruits, vegetable consumption is associated with lower diabetes risk.
+
+10. **Heavy Alcohol Consumption (HvyAlcoholConsump)** - Heavy drinkers show different diabetes patterns. Relationship is complex and requires further investigation.
+
+11. **Healthcare Coverage (AnyHealthcare)** - People with healthcare coverage show higher diabetes diagnosis rates. This could be due to better detection rather than higher actual prevalence.
+
+12. **No Doctor Due to Cost (NoDocbcCost)** - People who skip doctor visits due to cost show different diabetes patterns.
+
+13. **General Health (GenHlth)** - Strong correlation: As self-reported health worsens (1=excellent → 5=poor), diabetes prevalence increases dramatically.
+
+> [!IMPORTANT]
+> **Self-reported general health is one of the strongest predictors of diabetes status.**
+
+
+14. **Difficulty Walking (DiffWalk)** - People with walking difficulties show much higher diabetes rates.
+
+15. **Sex** - Males show slightly higher diabetes prevalence than females.
+
+16. **Age** - Clear trend: Diabetes prevalence increases with age. Strongest increase observed after age category 7 (approximately 45-50 years).
+
+> [!IMPORTANT]
+> **Age is a critical factor - diabetes risk increases significantly with age.**
+
+
+17. **Education** - Lower education levels correlate with higher diabetes rates. Suggests socioeconomic factors play a role.
+
+18. **Income** - Lower income levels show higher diabetes prevalence. Another indicator of socioeconomic influence.
 
 > [!NOTE]
-> **Recall is also very low at 15.2% ,again due to imblanced class problem. In the field of healthcare, correctly identifying positive cases is way more important than actual accuracy.**
+> **Socioeconomic factors (education and income) show inverse correlation with diabetes risk.**
 
-> [!NOTE]
-> **F1 score is also very low at 0.238. This shows that the baseline model performs poorly in 
-> balancing false positive and false negatives.** 
 
-> [!NOTE]
-> **ROC-AUC is at 0.811. This shows that the baseline model performs reasonably well in 
-> ranking diabetics higher than non diabetics and has high discriminative ability.**
+## Correlation Analysis
+
+### Correlation Heatmap
+A correlation heatmap was created to identify relationships between features.
+
+<img alt="alt_text" width="512px" src="images/correlation_heatmap.png" />
+
+**Key Findings:**
+
+**Strong Positive Correlations:**
+1. **HighBP ↔ HighChol (0.43)**: People with high blood pressure often have high cholesterol.
+2. **PhysHlth ↔ DiffWalk (0.50)**: Physical health issues correlate with walking difficulties.
+3. **Age ↔ Multiple features**: Age shows moderate positive correlation with many health issues.
+
+**Strong Negative Correlations:**
+1. **GenHlth ↔ PhysActivity (-0.28)**: People with poor general health tend to be less physically active.
+2. **Income ↔ NoDocbcCost (-0.31)**: Higher income correlates with fewer skipped doctor visits.
+
+**Diabetes Correlations:**
+1. **Strongest positive**: HighBP (0.33), HighChol (0.28), BMI (0.28), GenHlth (0.28)
+2. **Moderate positive**: Age (0.25), DiffWalk (0.23)
+3. **Negative**: PhysActivity (-0.18), Income (-0.12)
+
+> [!IMPORTANT]
+> **Clinical markers (HighBP, HighChol, BMI) and self-reported health (GenHlth) are the strongest correlates of diabetes.**
 
 
 ## Feature Engineering
+Based on the correlation analysis and domain knowledge, several interaction features were created to capture complex relationships.
 
-## Interaction Features
+### Engineered Features
 
-During exploratory data anyslsis we have seen that some of the Categorical Binary Feature of type Clinical Indicator showed a high degree of correlation with the prevalence of diabetes. Within these features we can look at a subset of features to see , how these features impact diabetes prevalence individually and cumulatively. 
-
-
-
-1. Clinical Markers 
-
-Below is the plot showing Diabetes Prevalence by individual clinical markers 
-
-<img alt="alt_text" width="512px" src="images/clinical_markers.png" />
-
-Below is the plot showing Diabetes Prevalence by cumulative clinical markers 
-
-<img alt="alt_text" width="512px" src="images/cumulative_clinical_markers.png" />
+| Feature Name | Formula | Rationale |
+|--------------|---------|-----------|
+| **ClinicalMarkerRisk** | HighBP + HighChol + Stroke + HeartDiseaseorAttack + DiffWalk | Cumulative clinical risk score capturing multiple comorbidities |
+| **AgeBMIMarkerRisk** | Age × BMI | Interaction between age-related metabolic decline and obesity |
+| **BMISedentaryMarkerRisk** | BMI × (1 - PhysActivity) | Combined effect of high BMI and physical inactivity |
+| **LifestyleMarkerRisk** | PhysActivity + Fruits + Veggies + (1-HvyAlcoholConsump) + (1-Smoker) | Composite healthy lifestyle score |
 
 > [!NOTE]
-> **As can be seen from the above cumulative plot, the presence of comorbidity indicates severe dysfunction and higher risk of diabetes. We will create a cumulative column for clinical markers.**
+> **These engineered features capture important interaction effects that individual features alone cannot represent.**
 
 
-2. Lifestye Markers 
-   The correlation plot of lifestyle features has already indicated positive or negative correlation with 
-   the prevalence of diabetes. We will similarly create a cumulative column for lifestyle markers.
-    
+### Feature Engineering Rationale
 
-3. Both Age and BMI showed high degree of corelation with diabetes prevalence and were strong indicators. With an increase in age, metabolism reduces and insulin resistance develops, so its important to capture this interaction.
+1. **ClinicalMarkerRisk**: Medical research shows that patients with multiple comorbidities have exponentially higher diabetes risk than those with single conditions.
 
-4. BMI showed a high degree of positive correlation and physical activity showed a high degree of negative corelation. Its important to capture this interaction.
+2. **AgeBMIMarkerRisk**: The combination of aging (metabolic slowdown) and high BMI creates a multiplicative effect on diabetes risk.
 
+3. **BMISedentaryMarkerRisk**: Sedentary behavior combined with high BMI is particularly dangerous for metabolic health.
 
-| Interactive Feature  	     | Intepretation                              |
-|----------------------------|--------------------------------------------|
-| Clinical Marker Risk       |  Comorbidity increases risk.               |       
-| Lifestyle Marker Risk      |  Positive lifestyle traits decrease and negative ones increase risk.               |
-| Age BMI Marker Risk        |  Metabolism decreases with age amd high BMI has a compounded impact.               |
-| BMI Sedentary Marker Risk  |    Sedentary lifestyle and high BMI increase risk.             |  
+4. **LifestyleMarkerRisk**: Captures the cumulative protective effect of multiple positive lifestyle factors.
 
+## Target Variable Transformation
 
-## Model Comparision
+The original target variable `Diabetes_012` has three classes (0, 1, 2). For binary classification, the target was transformed as follows:
 
-We will use the following classifiers with balanced weights and compare their scores.
+**Transformation Applied:**
+- **0 (No Diabetes)** → 0
+- **1 (Pre-Diabetes)** → 1
+- **2 (Diabetes)** → 1
 
+**Rationale:**
+- Pre-diabetes and diabetes are both conditions requiring medical intervention
+- Combining them creates a clearer screening task: identify anyone at risk
+- Matches real-world healthcare screening objectives
 
-1. Logistic regression with L2 regularization
-2. DecisionTreeClassifier
-3. RandomForestClassifier
-4. GradientBoostingClassifier
-5. SVM
-6. Gaussian Naive Bayes
+**Final Class Distribution:**
+- No Diabetes: 190,055 (82.7%)
+- Diabetes/Pre-Diabetes: 39,726 (17.3%)
 
-
-
-## Model Comparison Results (Sorted by Recall)
-
-| Model                | Accuracy | Precision | Recall   | F1-Score | ROC-AUC  | Training Time (s) |
-|----------------------|----------|-----------|----------|----------|----------|-------------------|
-| Decision Tree        | 0.708    | 0.309     | **0.761**| 0.440    | 0.797    | 0.38              |
-| Logistic Regression  | 0.726    | 0.324     | **0.752**| 0.453    | 0.810    | 12.27             |
-| SVM (5% sample)      | 0.646    | 0.263     | **0.745**| 0.388    | 0.756    | 23.19             |
-| Naive Bayes          | 0.755    | 0.331     | **0.612**| 0.430    | 0.779    | 0.06              |
-| Gradient Boosting    | 0.854    | 0.562     | 0.158    | 0.246    | 0.815    | 11.29             |
-| Random Forest        | 0.843    | 0.441     | 0.152    | 0.226    | 0.772    | 55.45             |
-
-The following plot show a graphical representation of the training time by model type
-<img alt="alt_text" width="512px" src="images/model_training_time.png" />
+> [!IMPORTANT]
+> **Class imbalance (82.7% vs 17.3%) will require special handling during modeling to ensure the model doesn't simply predict "no diabetes" for everyone.**
 
 
-The following plot show a graphical representation of the performance metrics by model type
-<img alt="alt_text" width="512px" src="images/model_metrics.png" />
+# Modeling
 
+## Baseline Model Evaluation
+
+Eight models were evaluated as baselines to identify the most promising algorithms for diabetes prediction.
+
+### Models Tested
+
+1. Decision Tree
+2. Logistic Regression
+3. Support Vector Machine (SVM)
+4. Naive Bayes
+5. Gradient Boosting
+6. Random Forest
+7. K-Nearest Neighbors (KNN)
+8. AdaBoost
+
+### Baseline Results
+
+| Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC | Training Time (s) |
+|-------|----------|-----------|--------|----------|---------|-------------------|
+| Decision Tree | 0.708 | 0.309 | 0.761 | 0.440 | 0.797 | 0.38 |
+| Logistic Regression | 0.726 | 0.324 | 0.752 | 0.453 | 0.810 | 12.27 |
+| SVM (5% sample) | 0.646 | 0.263 | 0.745 | 0.388 | 0.756 | 23.19 |
+| Naive Bayes | 0.755 | 0.331 | 0.612 | 0.430 | 0.779 | 0.06 |
+| Gradient Boosting | 0.854 | 0.562 | 0.158 | 0.246 | 0.815 | 11.29 |
+| Random Forest | 0.843 | 0.441 | 0.152 | 0.226 | 0.772 | 55.45 |
+| KNN | 0.784 | 0.358 | 0.456 | 0.401 | 0.717 | 97.23 |
+| AdaBoost | 0.852 | 0.546 | 0.193 | 0.286 | 0.800 | 11.94 |
+
+### Key Observations
+
+> [!IMPORTANT]
+> **Recall is the critical metric for healthcare screening** - we want to identify as many diabetic patients as possible to minimize false negatives.
+
+**Best Performers by Recall:**
+1. **Decision Tree**: 76.1% recall
+2. **Logistic Regression**: 75.2% recall
+3. **SVM**: 74.5% recall
+
+**Poor Performers:**
+- **Gradient Boosting**: 15.8% recall (optimized for accuracy, missed 84% of diabetics)
+- **Random Forest**: 15.2% recall (same issue)
+- **AdaBoost**: 19.3% recall
+
+> [!WARNING]
+> **Ensemble models (Random Forest, Gradient Boosting) failed dramatically on this imbalanced dataset**, achieving high accuracy (85%) but catastrophically low recall (15%). They optimized for the majority class.
+
+## Hyperparameter Tuning
+
+Based on baseline results, Decision Tree and Logistic Regression were selected for hyperparameter tuning due to their superior recall performance.
+
+### Decision Tree Grid Search
+
+| Parameter | Values Tested |
+|-----------|---------------|
+| max_depth | [8, 10, 12, 15, None] |
+| min_samples_split | [10, 20, 30, 50] |
+| min_samples_leaf | [5, 10, 15, 20] |
+| class_weight | ['balanced', {0:1, 1:8}, {0:1, 1:10}] |
+| criterion | ['gini', 'entropy'] |
+
+- **Total Combinations**: 480
+- **Cross-Validation**: 5-fold
+- **Optimization Metric**: Recall
+- **Training Time**: 147 seconds (~2.5 minutes)
+
+### Logistic Regression Grid Search
+
+| Parameter | Values Tested |
+|-----------|---------------|
+| C | [0.1, 1, 10, 100] |
+| penalty | ['l2'] |
+| solver | ['liblinear'] |
+| class_weight | ['balanced', {0:1, 1:8}, {0:1, 1:10}] |
+| max_iter | [5000] |
+
+- **Total Combinations**: 12
+- **Cross-Validation**: 5-fold
+- **Optimization Metric**: Recall
+- **Training Time**: 1442 seconds (~24 minutes)
 
 > [!NOTE]
-> **SVM is trained on 5% of the total dataset and hence the training time is not a true representation.**
+> **Both models converged on class_weight {0: 1, 1: 10}**, which heavily penalizes false negatives - critical for healthcare screening where missing a diabetic patient has serious consequences.
 
+## Tuned Model Performance
 
-On comparing the results of each of the classifiers we observe the following 
-
-
-| Model               | Strength                 | Weakness | Verdict | Reason |
-|---------------------|--------------------------|----------|---------|--------|
-| Decision Tree       | High Recall, Fast        | Precision is Low |   Reccomended      | High Recall is important in healthcare usecase.       |
-| Logistic Regression | High recall, decent AUC  |  Precision is Low | Alternative        |  Simple model     |
-| SVM (5% sample)     | High recall              |  Low accuracy and slow        |     Not Reccomended    | Impractical training time with no performance benefit over simpler models       |
-| Naive Bayes         | Fast and balanced      |  Moderate recall       | Not Reccomended  |  Unacceptable miss rate for medical screening despite speed advantage      |
-| Gradient Boosting   | High precision, high accuracy, good ROC-AUC |  Very low recall       |  Not Reccomended        | Optimized for majority class and not useful for healthcare       |
-| Random Forest       |  High precision                        |  Very low recall and slow        | Not Reccomended        |  Unacceptable miss rate for medical screening and slow.      |
-
-## Model Tuning
-
-> [!NOTE]
-> **We will tune Decision tree, Logistic Regression and Naive Bayes with a Grid Search CV. We will not tune SVM as it will be extremly slow. We will also not tune Gradient Boosting and Random Forest as they have un-usable recall values.**
-
-
-## Decision Tree Hyperparameter Grid
-
-### Hyperparameter Grid for Decision Tree
-
-| Parameter              | Values Tested                                    |
-|------------------------|--------------------------------------------------|
-| max_depth              | 8, 10, 12, 15, None                              |
-| min_samples_split      | 10, 20, 30, 50                                   |
-| min_samples_leaf       | 5, 10, 15, 20                                    |
-| class_weight           | balanced, {0: 1, 1: 8}, {0: 1, 1: 10}            |
-| criterion              | gini, entropy                                    |
-
-### Hyperparameter Grid for Logistic Regression 
-
-| Parameter              | Values Tested                                    |
-|------------------------|--------------------------------------------------|
-| C                      | 0.001, 0.01, 0.1, 1, 10, 100                     |
-| penalty                | l1, l2                                           |
-| solver                 | saga                                             |
-| class_weight           | balanced, {0: 1, 1: 8}, {0: 1, 1: 10}            |
-| max_iter               | 2000, 3000                                       |
-
-## Tuned Model Performance Comparison
-
-| Model                      | Accuracy | Precision | Recall   | F1-Score | ROC-AUC  | Training Time (s) |
-|----------------------------|----------|-----------|----------|----------|----------|-------------------|
+| Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC | Training Time (s) |
+|-------|----------|-----------|--------|----------|---------|-------------------|
 | Tuned Decision Tree        | 0.592    | 0.256     | **0.890**| 0.397    | 0.805    | 147.02            |
 | Tuned Logistic Regression  | 0.620    | 0.268     | **0.875**| 0.410    | 0.810    | 1442.01           |
 
