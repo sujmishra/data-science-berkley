@@ -461,7 +461,7 @@ On comparing the results of each of the classifiers we observe the following
 
 > [!IMPORTANT]
 > **Trade-offs:**
-> - **Recall improved**: 76% → 89% (Decision Tree baseline → tuned)
+> - **Recall improved**: 76% → 89% (Decision Tree baseline to tuned)
 > - **Precision decreased**: 31% → 26% (more false positives)
 
 ## Feature Importance - Tuned Decision Tree
@@ -488,3 +488,91 @@ On comparing the results of each of the classifiers we observe the following
 
 The following plot shows the feature importance as determined by the DecisionTreeClassifier. 
 <img alt="alt_text" width="512px" src="images/feature_importance_dt.png" />
+
+
+## Training Neural Networks 
+
+
+### Simple Architecture 
+
+| Layer | Type | Units/Shape | Activation | Parameters | Purpose |
+|-------|------|-------------|------------|------------|---------|
+| Input | Input | (21,) | - | 0 | Accepts 21 features (original features, no engineered) |
+| Hidden 1 | Dense | 64 | ReLU | 1,408 | First hidden layer for feature learning |
+| Hidden 2 | Dense | 32 | ReLU | 2,080 | Second hidden layer for pattern extraction |
+| Output | Dense | 1 | Sigmoid | 33 | Binary classification output (diabetes probability) |
+
+
+#### Neural Network Performance Metrics
+
+| Metric | Score | Interpretation |
+|--------|-------|----------------|
+| Accuracy | 0.739 | 73.9% of all predictions were correct |
+| Precision | 0.333 | When model predicts diabetes, it's correct 33.3% of the time |
+| Recall | **0.709** | Model identifies **70.9%** of diabetic patients |
+| F1-Score | 0.453 | Harmonic mean of precision and recall |
+| ROC-AUC | 0.802 | Model's ability to distinguish between classes |
+| Training Time | 0.91 min | Model trained in under 1 minute |
+
+
+The image below shows how the neural network performs
+<img alt="alt_text" width="512px" src="images/diabetes_nn_training.png" />
+
+#### Recall Over Training 
+
+1. Training recall starts at 80% and increases to 82%, showing that the model is learning.
+2. Validation recall fluctuates (0.71–0.80).
+
+
+#### Loss Over Training
+1. Training loss decreases from 93% to 86% showing optimization.
+
+
+### Advanced Architecture
+
+
+| Layer | Type | Units/Shape | Activation | Regularization | Parameters | Purpose |
+|-------|------|-------------|------------|----------------|------------|---------|
+| Input | Input | (21,) | - | - | 0 | Accepts 21 original features |
+| Hidden 1 | Dense | 256 | ReLU | L2 (0.01) | 5,632 | Wide entry layer for initial feature learning |
+| Hidden 2 | Dense | 128 | ReLU | L2 (0.01) | 32,896 | Intermediate pattern extraction |
+| Hidden 3 | Dense | 64 | ReLU | L2 (0.01) | 8,256 | Higher-level feature combinations |
+| Hidden 4 | Dense | 32 | ReLU | None | 2,080 | Deep pattern recognition |
+| Hidden 5 | Dense | 16 | ReLU | None | 528 | Bottleneck layer before output |
+| Output | Dense | 1 | Sigmoid | None | 17 | Binary diabetes probability [0,1] |
+
+#### Neural Network Performance Metrics
+
+| Metric | Score | Interpretation |
+|--------|-------|----------------|
+| Accuracy | 0.687 | 68.7% of all predictions were correct |
+| Precision | 0.305 | When model predicts diabetes, it's correct 30.5% of the time |
+| **Recall** | **0.819** | Model identifies **81.9%** of diabetic patients |
+| F1-Score | 0.444 | Harmonic mean of precision and recall |
+| ROC-AUC | 0.819 | Model's ability to distinguish between classes |
+| Training Time | 1.55 min | Model trained in ~90 seconds |
+
+
+#### Recall Over Training 
+
+1. Training recall completely flat at ~81% for all 100 epochs.
+2. Validation recall fluctuates between 75-86% (±6%).
+3. Zero Learning After Initialization
+
+
+#### Loss Over Training
+1. Training loss decreases flat at 93% showing no optimization.
+2. L2 penalty didn't help convergence
+
+The image below shows how the neural network performs
+<img alt="alt_text" width="512px" src="diabetes_advanced_nn_training.png" />
+
+
+
+> [!IMPORTANT]
+>  After multiple attempts with 
+>  1. 2 layer and 5 layer architecture
+>  2. L2 and No regularization
+>  3. Class weights
+>  4. Fixed and random validation weights
+> **We see inconsistent 71-81% recall with Neural Networks vs consistent recall of 89% with DecisionTree and 87.5% with LogisticRegression.**
