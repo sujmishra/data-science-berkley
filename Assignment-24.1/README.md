@@ -350,12 +350,13 @@ Below is the plot showing Diabetes Prevalence by cumulative clinical markers
 We will use the following classifiers with balanced weights and compare their scores.
 
 
-**1. Logistic regression with L2 regularization**
-**2. DecisionTreeClassifier**
-**3. RandomForestClassifier**
-**4. GradientBoostingClassifier** 
-**5. SVM** 
-**6. Gaussian Naive Bayes** 
+1. Logistic regression with L2 regularization
+2. DecisionTreeClassifier
+3. RandomForestClassifier
+4. GradientBoostingClassifier
+5. SVM
+6. Gaussian Naive Bayes
+
 
 
 ## Model Comparison Results (Sorted by Recall)
@@ -369,13 +370,13 @@ We will use the following classifiers with balanced weights and compare their sc
 | Gradient Boosting    | 0.854    | 0.562     | 0.158    | 0.246    | 0.815    | 11.29             |
 | Random Forest        | 0.843    | 0.441     | 0.152    | 0.226    | 0.772    | 55.45             |
 
-The following plot show a graphical representation of the performance metrics by model type
+The following plot show a graphical representation of the training time by model type
+<img alt="alt_text" width="512px" src="images/model_training_time.png" />
 
+
+The following plot show a graphical representation of the performance metrics by model type
 <img alt="alt_text" width="512px" src="images/model_metrics.png" />
 
-
-The following plot shows the training times of the models. 
-<img alt="alt_text" width="512px" src="images/model_training_time.png" />
 
 > [!NOTE]
 > **SVM is trained on 5% of the total dataset and hence the training time is not a true representation.**
