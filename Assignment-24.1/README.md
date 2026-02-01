@@ -18,7 +18,8 @@
 risk of diabetes?**
 
 # Notebook
-The jupyter notebook used for this machine learning exercise is present [here](capstone-eda.ipynb) 
+The jupyter notebook used for this exploratory data analysis is present [here](capstone-eda.ipynb) 
+The jupyter notebook used for model training and tuning is [here](diabetes_models.ipynb) 
 
 # Understanding the Business
 
