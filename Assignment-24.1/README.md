@@ -350,12 +350,12 @@ Below is the plot showing Diabetes Prevalence by cumulative clinical markers
 We will use the following classifiers with balanced weights and compare their scores.
 
 
-# 1. Logistic regression with L2 regularization
-# 2. DecisionTreeClassifier
-# 3. RandomForestClassifier
-# 4. GradientBoostingClassifier 
-# 5. SVM 
-# 6. Gaussian Naive Bayes 
+**1. Logistic regression with L2 regularization**
+**2. DecisionTreeClassifier**
+**3. RandomForestClassifier**
+**4. GradientBoostingClassifier** 
+**5. SVM** 
+**6. Gaussian Naive Bayes** 
 
 
 ## Model Comparison Results (Sorted by Recall)
@@ -371,7 +371,7 @@ We will use the following classifiers with balanced weights and compare their sc
 
 The following plot show a graphical representation of the performance metrics by model type
 
-<img alt="alt_text" width="512px" src="iimages/model_metrics.png" />
+<img alt="alt_text" width="512px" src="images/model_metrics.png" />
 
 
 The following plot shows a plot of the training times of the models. 
