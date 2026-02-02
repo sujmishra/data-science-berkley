@@ -593,9 +593,9 @@ Since the tuned Decision Tree achieved the best recall (89%) with reasonable tra
 
 ## Target Users
 
-Public Health Officials - For population-level screening programs
-Healthcare Providers - For patient risk assessment during routine checkups
-General Population - For self-assessment through web or mobile interfaces
+Public Health Officials could use this for large scale screening efforts.
+Healthcare Providers could utilize this for patient risk assessment during routine checkups
+General Population could use this for self-assessment through web or mobile interfaces
 
 > [!IMPORTANT]
 > The model achieves high recall (89%) but lower precision (26%). This means:
@@ -604,8 +604,52 @@ General Population - For self-assessment through web or mobile interfaces
 > It also flags many non-diabetic individuals as at-risk (high false positives)
 
 ## Success Metrics
-The success of deploying this model would be measured using the following parameters:
+In order to evaluate the success of this deployment in the real world, we'd need to track a few key metrics:
 
 1. **Adoption Rate**: How many users and healthcare facilities are using a tool built with this model?
 2. **Early Detection**: How many diabetic cases have been identified through screening?
 3. **Public Health Impact**: Has there been a decline in diabetes prevalence post the availabilit of this tool?
+
+
+# Findings 
+
+**Key Finding**: A predictive model was developed that successfully identifies **89% of diabetic patients** by examining a mix of lifestyle and clinical factors. This impressive detection rate means that the model could be very useful for detecting diabetes early on.
+
+### Finding 1: Accumulation of clinical risk factors 
+
+**Results**
+- A new measure called the "Clinical Marker Risk Score" was introduced, combining elements like high blood pressure, high cholesterol, and past heart issues or strokes.
+- This combined score emerged as the **#1 most crucial predictor** in the model accounting for 40.7% of its importance
+- People with multiple clinical conditions have a significantly heightened risk of developing diabetes.
+
+**Inference**
+Diabetes isn't just a standalone issue; it’s often intertwined with various metabolic and cardiovascular problems. If someone has high blood pressure or cholesterol, their chances of also having diabetes increase substantially.
+
+
+### Finding 2: Body Mass Index is the most crucial lifestyle indicator
+**Results**
+- We found that Body Mass Index (BMI) serves as a crucial lifestyle indicator for diabetes risk, coming in as the fourth most significant factor in the model.
+- Individuals with a higher BMI are more likely to develop diabetes, and the median BMI for those with diabetes is noticeably higher than for their non-diabetic counterparts.
+- The median BMI for those with diabetes is noticeably higher than for their non-diabetic counterparts
+
+
+**Inference**
+This underscores the importance of maintaining a healthy weight. Simple changes in diet and exercise could be the most impactful steps for those at risk.
+
+### Finding 3: Self-Reported Health Status is a Powerful Early Warning Sign 
+**Results**
+- How people perceive their own health can serve as an early warning sign
+- The way individuals rate their health on a scale of 1-5 emerged as the **second most important** predictor.
+- Those who describe their health as poor are at a much higher risk for diabetes
+
+**Inference**
+We should take self-reports seriously, as early detection can help with prevention and diagnosis..
+
+### Finding 4: Lifestyle factors had minimal impact
+
+- Physical activity had llimited impact on the risk of diabetes.
+- Daily consumption of fruits and vegetables did not significantly reduce diabetes risk
+- Number of days a mental health condition like stress or depression was encountered had negligible to no impact on the risk of diabetes.
+- Even heavy drinking had minimal effects.
+
+# Next Steps and Recommendations
