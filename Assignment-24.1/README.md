@@ -668,7 +668,7 @@ While lifestyle factors are important indicators, they are not strong indication
 7. Launch public awareness campaigns about the impact of Body Mass Index on risk of diabetes. 
 
 ## Healthcare Providers
-1. Record body Mass Index in annual and semi annual physical checkups.
+1. Record Body Mass Index in annual and semi annual physical checkups.
 2. On High Body Mass Index suggest glucose tests.
 3. If patient has high blood pressure order glucose tests.
 4. If patient has a history of stroke or heart diseases suggest glucose tests.
