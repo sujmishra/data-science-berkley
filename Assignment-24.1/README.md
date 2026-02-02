@@ -613,7 +613,7 @@ In order to evaluate the success of this deployment in the real world, we'd need
 
 
 # Findings 
-> [!WARNING]
+> [!TIP]
 > **Key Finding**
 > A predictive model successfully identifies **89% of diabetic patients**, making it highly effective for early detection.
 
