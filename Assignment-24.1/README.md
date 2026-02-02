@@ -613,8 +613,10 @@ In order to evaluate the success of this deployment in the real world, we'd need
 
 
 # Findings 
+> [!WARNING]
+> **Key Finding**
+> A predictive model successfully identifies **89% of diabetic patients**, making it highly effective for early detection.
 
-**Key Finding**: A predictive model was developed that successfully identifies **89% of diabetic patients** by examining a mix of lifestyle and clinical factors. This impressive detection rate means that the model could be very useful for detecting diabetes early on.
 
 ### Finding 1: Accumulation of clinical risk factors 
 
