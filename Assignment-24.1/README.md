@@ -586,3 +586,26 @@ On comparing the results of each of the classifiers we observe the following
 >  3. Class weights
 >  4. Fixed and random validation weights
 > **We see inconsistent 71-81% recall with Neural Networks vs consistent recall of 89% with DecisionTree and 87.5% with LogisticRegression.**
+
+# Deployment
+Since the tuned Decision Tree achieved the best recall (89%) with reasonable training time, it serves as the primary model for deployment.
+
+
+## Target Users
+
+Public Health Officials - For population-level screening programs
+Healthcare Providers - For patient risk assessment during routine checkups
+General Population - For self-assessment through web or mobile interfaces
+
+> [!IMPORTANT]
+> The model achieves high recall (89%) but lower precision (26%). This means:
+
+> It correctly identifies most diabetic patients (low false negatives)
+> It also flags many non-diabetic individuals as at-risk (high false positives)
+
+## Success Metrics
+The success of deploying this model would be measured using the following parameters:
+
+1. **Adoption Rate**: How many users and healthcare facilities are using a tool built with this model?
+2. **Early Detection**: How many diabetic cases have been identified through screening?
+3. **Public Health Impact**: Has there been a decline in diabetes prevalence post the availabilit of this tool?
