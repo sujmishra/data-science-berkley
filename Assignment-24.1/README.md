@@ -402,7 +402,6 @@ On comparing the results of each of the classifiers we observe the following
 
 
 ## Cross-Validation Results (5-Fold CV)
-
 The following table shows cross-validation performance for each model using recall as the evaluation metric:
 
 | Rank | Model | Mean Recall | Std Dev | Min Recall | Max Recall | Fold Scores |
