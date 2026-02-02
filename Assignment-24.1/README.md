@@ -19,7 +19,8 @@ risk of diabetes?**
 
 # Notebook
 1. The jupyter notebook used for this exploratory data analysis is present [here](capstone-eda.ipynb) 
-2. The jupyter notebook used for model training and tuning is [here](diabetes_models.ipynb) 
+2. The jupyter notebook used for model training and tuning is [here](diabetes_models.ipynb)
+3. The jupyter notebook used for neural networks training is [here](diabetes_neural_networks.ipynb)
 
 # Understanding the Business
 
