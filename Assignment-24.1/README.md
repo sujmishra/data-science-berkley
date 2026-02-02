@@ -400,6 +400,22 @@ On comparing the results of each of the classifiers we observe the following
 | Gradient Boosting   | High precision, high accuracy, good ROC-AUC |  Very low recall       |  Not Reccomended        | Optimized for majority class and not useful for healthcare       |
 | Random Forest       |  High precision                        |  Very low recall and slow        | Not Reccomended        |  Unacceptable miss rate for medical screening and slow.      |
 
+
+## Cross-Validation Results (5-Fold CV)
+
+The following table shows cross-validation performance for each model using recall as the evaluation metric:
+
+| Rank | Model | Mean Recall | Std Dev | Min Recall | Max Recall | Fold Scores |
+|------|-------|-------------|---------|------------|------------|-------------|
+| 1 | Decision Tree | 0.7676 | 0.0134 | 0.7504 | 0.7887 | [0.789, 0.750, 0.756, 0.773, 0.770] |
+| 2 | Logistic Regression | 0.7506 | 0.0056 | 0.7406 | 0.7571 | [0.757, 0.751, 0.754, 0.741, 0.750] |
+| 3 | Naive Bayes | 0.6142 | 0.0058 | 0.6057 | 0.6218 | [0.619, 0.612, 0.612, 0.606, 0.622] |
+| 4 | Gradient Boosting | 0.1658 | 0.0026 | 0.1608 | 0.1680 | [0.167, 0.166, 0.167, 0.161, 0.168] |
+| 5 | Random Forest | 0.1528 | 0.0037 | 0.1497 | 0.1600 | [0.152, 0.151, 0.160, 0.151, 0.150] |
+
+> [!TIP]
+> **Decision Tree** achieved the highest mean recall (76.76%) with acceptable variance (±1.34%)
+
 ## Model Tuning
 
 > [!NOTE]
