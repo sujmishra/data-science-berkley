@@ -644,7 +644,7 @@ This underscores the importance of maintaining a healthy weight. Simple changes 
 - Those who describe their health as poor are at a much higher risk for diabetes
 
 **Inference**
-We should take self-reports seriously, as early detection can help with prevention and diagnosis..
+We should take self-reports seriously, as early detection can help with prevention and diagnosis.
 
 ### Finding 4: Lifestyle factors had minimal impact
 
@@ -653,4 +653,36 @@ We should take self-reports seriously, as early detection can help with preventi
 - Number of days a mental health condition like stress or depression was encountered had negligible to no impact on the risk of diabetes.
 - Even heavy drinking had minimal effects.
 
+**Inference**
+While lifestyle factors are important indicators, they are not strong indication of the risk of diabetes in isolation. That said the impact of these factors can be seen indirectly using factors such as Body Mass Index or General Health.
+
 # Next Steps and Recommendations
+
+## Public Health Policy
+1. Distribute educational material about the risk of diabetes.
+2. Distribute free BMI calulator apps on popular mobile platforms.
+3. Deploy a public health web/mobile application to perform risk assessment using the deployed **Decision Tree**  model.
+4. Create a national diabetes registry.
+5. Analyze screening data to identify demographics and neighbourhoods at high risk.
+6. Offer free quarterly testing of diabetes for at risk demographics.
+7. Launch public awareness campaigns about the impact of Body Mass Index on risk of diabetes. 
+
+## Healthcare Providers
+1. Record body Mass Index in annual and semi annual physical checkups.
+2. On High Body Mass Index suggest glucose tests.
+3. If patient has high blood pressure order glucose tests.
+4. If patient has a history of stroke or heart diseases suggest glucose tests.
+5. Create a portal where respondents could volunteer for a physical and mental health score.
+6. Use the deployed **Decision Tree** model to calculate risk of diabetes for all patients above 50.
+7. Flag all patients identified as high risk for immediate intervention.
+8. Refer to Dieticians for dietary changes.
+
+
+## Individuals 
+1. Measure BMI regularly.
+2. Complete health risk surveys regularly.
+3. Schedule semi annual physical checkups.
+4. If suffering from High Blood Pressure or High cholestrol , ask your doctor for diabetes screening.
+5. Reduce heavy alcohol consumption.
+6. Develop healthy eating habbits with daily intake of veggies and fruits.
+7. Install diabetes screening web/mobile application based on the deployed **Decision Tree** model.
