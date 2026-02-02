@@ -466,8 +466,8 @@ On comparing the results of each of the classifiers we observe the following
 
 > [!IMPORTANT]
 > **Trade-offs:**
-> - **Recall improved**: 76% → 89% (Decision Tree baseline to tuned)
-> - **Precision decreased**: 31% → 26% (more false positives)
+> - **Recall improved**: 76% to 89% (Decision Tree baseline to tuned)
+> - **Precision decreased**: 31% to 26% (more false positives)
 
 ## Feature Importance - Tuned Decision Tree
 
